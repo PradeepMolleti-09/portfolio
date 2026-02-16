@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Star Shot — AI POWERED FACE REGONITION",
+    "role": "MERN / <br /> Creative Development",
+    "description": "Star Shot is a AI-powered face recognition platform. It is a modern, interactive platform.",
+    "link": "https://star-shot-sand.vercel.app/"
+  },
+  {
+    "id": 2,
+    "title": "Go2Gether — Real-Time Distributed Group Navigation System",
+    "role": "MERN / <br /> Creative Development",
+    "description": "Go2Gether is a real-time group navigation platform. It is a modern, interactive travel coordination system with live location tracking and smart safety features.",
+    "link": "https://go2gether-iota.vercel.app/"
+  },
+  {
+    "id": 3,
+    "title": "STUDIO NULL — RADIO NULL REWIND 2022",
+    "role": "Art Direction / <br /> Creative Development",
+    "description": "A year-end editorial experience by Studio Null, blending design, music, and interactive storytelling.",
+    "link": "https://2022.madebynull.com/"
+  },
+  {
+    "id": 4,
+    "title": "GRP 256 — FOLIO FOR VISUAL DESIGNER",
+    "role": "3D Exploration / <br /> Creative Development",
+    "description": "GRP 256 is a 3D-driven digital portfolio designed for showcasing the works of visual designer Fayemi.",
+    "link": "https://fayemi.design/"
+  }
+]

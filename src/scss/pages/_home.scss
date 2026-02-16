@@ -11,6 +11,7 @@
 .home {
   padding: 2.4rem 0;
   visibility: hidden;
+
   &__nav {
     @extend %padding-home;
     margin-bottom: 6.4rem;
@@ -73,6 +74,7 @@
     }
 
     .nav {
+
       &__folio,
       &__availability {
         color: $col-boulder;
@@ -108,6 +110,7 @@
             @extend %title-328;
             letter-spacing: -0.05em;
             word-wrap: break-word;
+
             @include media(">phone") {
               display: none;
             }
@@ -129,7 +132,7 @@
         &__dash {
           display: inline-block;
           @extend %title-328;
-          letter-spacing: -0.105em;
+          letter-spacing: -0.05em;
         }
 
         &__dash {
@@ -173,9 +176,10 @@
             display: flex;
           }
         }
+
         .bottom__left {
           @extend %title-328;
-          letter-spacing: -0.105em;
+          letter-spacing: -0.05em;
           flex-shrink: 0;
         }
 
@@ -236,6 +240,7 @@
       display: inline-block;
       width: 100%;
       visibility: hidden;
+
       span {
         height: 2px;
         background: $col-boulder;
@@ -354,13 +359,13 @@
     max-width: 113rem;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 9.6rem;
-    padding-bottom: 9.6rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
 
     @include media(">tablet") {
       display: flex;
-      padding-top: 24rem;
-      padding-bottom: 24rem;
+      padding-top: 16rem;
+      padding-bottom: 16rem;
     }
 
     &__top,
@@ -472,7 +477,7 @@
 
   &__contact {
     @include media(">tablet") {
-      padding-top: 16rem;
+      padding-top: 2rem;
     }
 
     .line-wrapper {
@@ -592,6 +597,7 @@
 
       .to-copy {
         display: none;
+
         @media (any-pointer: fine) {
           display: block;
           opacity: 0;
@@ -630,7 +636,7 @@
         }
 
         &:hover {
-          & + .to-copy {
+          &+.to-copy {
             transform: translateY(0);
             opacity: 1;
           }
@@ -664,6 +670,7 @@
     &__left {
       display: flex;
       font-family: $font-sauce;
+
       @include media(">tablet") {
         left: 2.4rem;
         position: absolute;
@@ -707,6 +714,7 @@
         @include media("<=tablet") {
           margin-bottom: 4.8rem;
         }
+
         .link__flex {
           display: flex;
           margin-left: auto;
@@ -723,6 +731,7 @@
 
           &__inner {
             display: flex;
+
             .c-button {
               @include media("<=tablet") {
                 &:first-of-type {
@@ -730,12 +739,14 @@
                 }
               }
             }
+
             &.second {
               .c-button {
                 @include media("<=tablet") {
                   &:first-of-type {
                     margin-right: 0;
                   }
+
                   &:last-of-type {
                     margin-right: 0.8rem;
                   }

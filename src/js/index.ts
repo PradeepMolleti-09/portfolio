@@ -1,54 +1,14 @@
-import LoconativeScroll from "loconative-scroll";
+// @ts-nocheck
+import LoconativeScroll from "./vendor/loconative-scroll";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { copyText } from "./utils/index";
 import { mapEach } from "./utils/dom";
-// import Home from "./pages/home";
 import Time from "./components/Time";
-
-const toContactButtons = document.querySelectorAll(".contact-scroll");
-const footer = document.getElementById("js-footer");
-const scrollEl = document.querySelector("[data-scroll-container]");
-const emailButton = document.querySelector("button.email");
-const toCopyText = document.querySelector(".to-copy span");
-// const body = document.body;
-const time = new Time();
 
 gsap.registerPlugin(ScrollTrigger);
 
-const scroll = new LoconativeScroll({
-  el: scrollEl,
-  smooth: true,
-  lerp: 0.06,
-  tablet: {
-    breakpoint: 768,
-  },
-});
-
-setTimeout(() => {
-  scroll.update();
-}, 1000);
-
-scroll.on("scroll", ScrollTrigger.update);
-
-ScrollTrigger.scrollerProxy(scroll.el, {
-  scrollTop(value) {
-    return arguments.length
-      ? scroll.scrollTo(value, 0, 0)
-      : scroll.scroll.instance.scroll.y;
-  },
-
-  getBoundingClientRect() {
-    return {
-      top: 0,
-      left: 0,
-      width: window.innerWidth,
-      height: window.innerHeight,
-    };
-  },
-});
-
-export default class Home {
+export class Home {
   constructor(scroll) {
     this.locomotive = scroll;
     this.heroTextAnimation();
@@ -58,24 +18,33 @@ export default class Home {
   }
 
   homeActions() {
+    const toContactButtons = document.querySelectorAll(".contact-scroll");
+    const footer = document.getElementById("js-footer");
+    const emailButton = document.querySelector("button.email");
+    const toCopyText = document.querySelector(".to-copy span");
+
     mapEach(toContactButtons, (button) => {
       button.onclick = () => {
         this.locomotive.scrollTo(footer);
       };
     });
 
-    emailButton.addEventListener("click", (e) => {
-      copyText(e);
-      toCopyText.textContent = "copied";
-
-      setTimeout(() => {
-        toCopyText.textContent = "Click To Copy";
-      }, 2000);
-    });
+    if (emailButton) {
+      emailButton.addEventListener("click", (e) => {
+        copyText(e);
+        if (toCopyText) {
+          toCopyText.textContent = "copied";
+          setTimeout(() => {
+            toCopyText.textContent = "Click To Copy";
+          }, 2000);
+        }
+      });
+    }
   }
 
   homeIntro() {
     const tl = gsap.timeline();
+    const scrollEl = document.querySelector("[data-scroll-container]");
 
     gsap.to(scrollEl, {
       autoAlpha: 1,
@@ -135,6 +104,23 @@ export default class Home {
       });
     });
 
+    gsap.utils.toArray(".home__projects__project").forEach((el) => {
+      const text = el.querySelector(".title__main");
+      const link = el.querySelector(".home__projects__project__link");
+      gsap.from([text, link], {
+        scrollTrigger: {
+          trigger: el,
+          scroller: "[data-scroll-container]",
+        },
+        duration: 1.5,
+        yPercent: 100,
+        stagger: {
+          amount: 0.2,
+        },
+        ease: "power4.out",
+      });
+    });
+
     gsap.utils.toArray("[data-fade-in]").forEach((el) => {
       gsap.from(el, {
         scrollTrigger: {
@@ -147,43 +133,6 @@ export default class Home {
         ease: "power4.out",
       });
     });
-
-    if (window.innerWidth <= 768) {
-      gsap.utils.toArray(".home__projects__project").forEach((el) => {
-        const text = el.querySelector(".title__main");
-        const link = el.querySelector(".project__link");
-        gsap.from([text, link], {
-          scrollTrigger: {
-            trigger: el,
-            scroller: "[data-scroll-container]",
-          },
-          duration: 1.5,
-          yPercent: 100,
-          stagger: {
-            amount: 0.2,
-          },
-          ease: "power4.out",
-        });
-      });
-
-      const awardsTl = gsap.timeline({
-        defaults: {
-          ease: "power1.out",
-        },
-        scrollTrigger: {
-          trigger: ".home__awards",
-          scroller: "[data-scroll-container]",
-        },
-      });
-      awardsTl.from(".awards__title span", {
-        duration: 1,
-        opacity: 0,
-        yPercent: 100,
-        stagger: {
-          amount: 0.2,
-        },
-      });
-    }
   }
 
   heroTextAnimation() {
@@ -201,4 +150,55 @@ export default class Home {
   }
 }
 
-new Home(scroll);
+export function initAnimations() {
+  const scrollEl = document.querySelector("[data-scroll-container]");
+
+  // Initialize Time
+  new Time();
+
+  if (!scrollEl) return;
+
+  const scroll = new LoconativeScroll({
+    el: scrollEl,
+    smooth: true,
+    lerp: 0.06,
+    tablet: {
+      breakpoint: 768,
+    },
+  });
+
+  // Update ScrollTrigger on scroll
+  scroll.on("scroll", ScrollTrigger.update);
+
+  // Proxy ScrollTrigger to Locomotive Scroll
+  ScrollTrigger.scrollerProxy(scroll.el, {
+    scrollTop(value) {
+      return arguments.length
+        ? scroll.scrollTo(value, 0, 0)
+        : scroll.scroll.instance.scroll.y;
+    },
+    getBoundingClientRect() {
+      return {
+        top: 0,
+        left: 0,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+    },
+  });
+
+  // Refresh ScrollTrigger when window updates
+  ScrollTrigger.addEventListener("refresh", () => scroll.update());
+  ScrollTrigger.refresh();
+
+  // Initialize Home animations
+  new Home(scroll);
+
+  // Delayed update to ensure everything is rendered
+  setTimeout(() => {
+    scroll.update();
+    ScrollTrigger.refresh();
+  }, 1000);
+
+  return scroll;
+}

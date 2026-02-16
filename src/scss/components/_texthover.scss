@@ -14,17 +14,15 @@
   }
 
   .project__link {
-    @include media("<=phone") {
-    }
+    @include media("<=phone") {}
+
     text-align: right;
     padding-right: 5rem;
     padding-bottom: 3.1rem;
 
-    @include media(">phone") {
-      display: none;
-    }
+    display: block;
 
-    .c-button .c-link__inner > span {
+    .c-button .c-link__inner>span {
       margin-top: -4px;
       display: block;
     }
@@ -77,6 +75,7 @@
         animation: textGradientAnim 5s ease infinite alternate;
         overflow: hidden;
         -webkit-background-clip: text;
+        background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: background 0.3s;
 
@@ -84,6 +83,7 @@
           &::before {
             background: $col-orange;
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
           }
         }
@@ -97,6 +97,7 @@
         50% {
           background-position: 100% 50%;
         }
+
         100% {
           background-position: 0 50%;
         }
@@ -111,18 +112,15 @@
           text-align: right;
         }
       }
+
       .slide-up {
         position: absolute;
-        display: none;
+        display: inline-block;
         top: 0;
         left: 0;
         overflow: hidden;
         transform: translateY(100%);
         transition: transform 275ms ease;
-
-        @media (any-pointer: fine) {
-          display: inline-block;
-        }
 
         &::before {
           display: inline-block;
@@ -158,6 +156,7 @@
     @include media(">tablet") {
       white-space: nowrap;
     }
+
     text-transform: uppercase;
     padding-top: 6.4rem;
     padding-bottom: 4.5rem;
@@ -167,6 +166,7 @@
       padding-bottom: 2.4rem;
       line-height: 0.9;
     }
+
     .inline-ovh {
       display: inline-flex;
       overflow: hidden;
