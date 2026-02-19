@@ -8,27 +8,41 @@ function Eye({ tilt = 0 }: { tilt?: number }) {
     const target = useRef({ x: 0, y: 0 });
     const current = useRef({ x: 0, y: 0 });
 
-    // Track cursor position
+    // Track cursor and touch position
     useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
+        const handleInteraction = (clientX: number, clientY: number) => {
             if (!eyeRef.current) return;
 
             const rect = eyeRef.current.getBoundingClientRect();
             const centerX = rect.left + rect.width / 2;
             const centerY = rect.top + rect.height / 2;
 
-            const dx = e.clientX - centerX;
-            const dy = e.clientY - centerY;
+            const dx = clientX - centerX;
+            const dy = clientY - centerY;
 
             const angle = Math.atan2(dy, dx);
-            const maxMove = 25;
+            const maxMove = rect.width * 0.15; // Responsive max move
 
             target.current.x = Math.cos(angle) * maxMove;
             target.current.y = Math.sin(angle) * maxMove;
         };
 
+        const handleMouseMove = (e: MouseEvent) => {
+            handleInteraction(e.clientX, e.clientY);
+        };
+
+        const handleTouchMove = (e: TouchEvent) => {
+            if (e.touches[0]) {
+                handleInteraction(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        };
+
         window.addEventListener("mousemove", handleMouseMove);
-        return () => window.removeEventListener("mousemove", handleMouseMove);
+        window.addEventListener("touchmove", handleTouchMove);
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("touchmove", handleTouchMove);
+        };
     }, []);
 
     // Smooth animation loop
@@ -72,7 +86,7 @@ function Eye({ tilt = 0 }: { tilt?: number }) {
                 ref={eyeRef}
                 className={`
           relative
-          w-[160px] h-[160px]
+          w-[100px] h-[100px] md:w-[160px] md:h-[160px]
           bg-white
           rounded-full
           border-4 border-black
@@ -84,7 +98,7 @@ function Eye({ tilt = 0 }: { tilt?: number }) {
             >
                 <div
                     ref={pupilRef}
-                    className="w-[60px] h-[60px] bg-black rounded-full"
+                    className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] bg-black rounded-full"
                 />
             </div>
         </div>
@@ -93,7 +107,7 @@ function Eye({ tilt = 0 }: { tilt?: number }) {
 
 export default function AboutHero() {
     return (
-        <div className="w-full h-full flex items-center justify-center gap-24">
+        <div className="w-full h-full flex items-center justify-center gap-8 md:gap-24">
             <Eye tilt={-6} />
             <Eye tilt={6} />
         </div>

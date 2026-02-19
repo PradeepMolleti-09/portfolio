@@ -134,7 +134,7 @@ function App() {
                 </div>
 
                 {/* RIGHT SIDE */}
-                <div className="relative w-full md:w-1/2 h-[400px] md:h-[600px] flex items-center justify-center overflow-hidden">
+                <div className="relative w-full md:w-1/2 h-[250px] md:h-[600px] flex items-center justify-center overflow-hidden">
                     <AboutHero />
                 </div>
             </section>

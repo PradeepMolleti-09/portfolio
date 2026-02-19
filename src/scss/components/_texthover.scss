@@ -1,7 +1,7 @@
 .home__projects__project {
   color: $col-boulder;
 
-  @media (any-pointer: fine) {
+  @media (hover: hover) {
     &:hover {
       .label__inner {
         p {
@@ -62,11 +62,11 @@
   }
 
   &__link {
-    pointer-events: none;
-
-    @media (any-pointer: fine) {
-      pointer-events: auto;
-    }
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    pointer-events: auto;
 
     &.gradient {
       .title__main {
