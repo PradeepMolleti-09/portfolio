@@ -12,6 +12,18 @@
   padding: 2.4rem 0;
   visibility: hidden;
 
+  .desktop {
+    @include media("<=phone") {
+      display: none !important;
+    }
+  }
+
+  .mobile {
+    @include media(">phone") {
+      display: none !important;
+    }
+  }
+
   &__nav {
     @extend %padding-home;
     margin-bottom: 6.4rem;
@@ -106,30 +118,30 @@
         line-height: 0.9;
         color: $col-boulder;
 
-        h1 {
-          &.desktop {
-            @include media("<=phone") {
-              display: none;
-            }
+        .mobile {
+          @include media(">phone") {
+            display: none !important;
           }
 
-          &.mobile {
+          h1 {
             @extend %title-328;
             letter-spacing: -0.05em;
             word-wrap: break-word;
             line-height: 0.8;
+          }
+
+          .flex {
+            font-size: clamp(14px, 4vw, 18px);
+            line-height: 1;
+            color: $col-gray;
+            opacity: 0.6;
             margin-bottom: 2rem;
+          }
+        }
 
-            @include media(">phone") {
-              display: none;
-            }
-
-            .flex {
-              font-size: 0.4em;
-              line-height: 1;
-              color: $col-gray;
-              opacity: 0.6;
-            }
+        .desktop {
+          @include media("<=phone") {
+            display: none !important;
           }
         }
 

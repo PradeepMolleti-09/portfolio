@@ -51,15 +51,25 @@ function App() {
 
             <section className="home__hero">
                 <div className="hero__title">
-                    <h1 className="mobile">
-                        MERN <br />
-                        —STACK <br />
-                        DEVELOPER <br />
-                        <div className="flex justify-between w-full mt-4">
+                    <div className="mobile">
+                        <h1 className="uppercase">
+                            MERN <br />
+                            —STACK <br />
+                            DEVELOPER <br />
+                        </h1>
+                        <div className="flex justify-between w-full mt-4 opacity-40 text-[10px] tracking-[0.2em] font-medium uppercase">
                             <span>MERN</span>
                             <span>STACK</span>
                         </div>
-                    </h1>
+                        <p className="hero__paragraph mt-10">
+                            <span className="first-word text-[10px] opacity-50">ABOUT</span> &nbsp;
+                            Enthusiastic Full Stack Developer eager to build innovative
+                            full-stack web applications and grow through real-world projects,
+                            <span className="text-white">STAR SHOT, PAYSTACK, HEVA HEALTH, DISNEY, JELLY,</span> and
+                            <span className="text-white"> NULL</span> amongst others to achieve this.
+                        </p>
+                    </div>
+
                     <div className="hero__title__top overflow desktop">
                         <div className="hero__title__top" title-overflow="">
                             <span className="hero__title__left" data-scroll="" data-scroll-direction="horizontal" data-scroll-position="top"
@@ -83,9 +93,9 @@ function App() {
                         </div>
                     </div>
 
-                    <span className="hero__title__bottom overflow">
+                    <div className="hero__title__bottom overflow desktop">
                         <div className="hero__title__bottom">
-                            <h1 className="bottom__left desktop" title-overflow="">
+                            <h1 className="bottom__left" title-overflow="">
                                 <span className="hero__hover">D</span>
                                 <span className="hero__hover">E</span>
                                 <span className="hero__hover">V</span>
@@ -106,7 +116,7 @@ function App() {
                                 </p>
                             </div>
                         </div>
-                    </span>
+                    </div>
                 </div>
             </section>
 
