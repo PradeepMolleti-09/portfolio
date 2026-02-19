@@ -27,27 +27,23 @@ function App() {
         <main className="home" data-scroll-container="">
             <nav className="home__nav">
                 <div className="home__nav__left">
-                    <div className="nav__name" nav-anim="">
-                        <span>
-                            Pradeep Molleti
-                        </span>
+                    <div className="nav__name uppercase" nav-anim="">
+                        <span>Pradeep Molleti</span>
                     </div>
 
-                    <div className="nav__folio hide-mobile" nav-anim="">
-                        <span>
-                            MERN stack Developer
-                        </span>
+                    <div className="nav__folio hide-mobile uppercase" nav-anim="">
+                        <span>MERN stack Developer</span>
                     </div>
                 </div>
 
                 <div className="home__nav__right">
-                    <div className="nav__folio hide-desktop" nav-anim="">
+                    <div className="nav__folio hide-desktop uppercase" nav-anim="">
                         MERN stack Developer
                     </div>
 
                     <div className="nav__availability" nav-anim=""></div>
 
-                    <FeyButton className="nav__button contact-scroll" nav-anim="">
+                    <FeyButton className="nav__button contact-scroll lowercase" nav-anim="">
                         contact
                     </FeyButton>
                 </div>
@@ -57,8 +53,12 @@ function App() {
                 <div className="hero__title">
                     <h1 className="mobile">
                         MERN <br />
-                        — STACK <br />
-                        DEVELOPER
+                        —STACK <br />
+                        DEVELOPER <br />
+                        <div className="flex justify-between w-full mt-4">
+                            <span>MERN</span>
+                            <span>STACK</span>
+                        </div>
                     </h1>
                     <div className="hero__title__top overflow desktop">
                         <div className="hero__title__top" title-overflow="">
@@ -98,26 +98,12 @@ function App() {
                             </h1>
                             <div className="bottom__right">
                                 <p className="hero__paragraph">
-                                    <span className="first-word">About</span> &nbsp; Enthusiastic Full Stack Developer eager to build innovative
-                                    full-stack web applications and grow through real-world projects, <span>STAR SHOT,</span>
-                                    <span>Paystack,</span> <span>Heva Health,</span>
-                                    <span>Disney,</span> <span>Jelly,</span> and
-                                    <span>Null</span>
-                                    amongst others to achieve this.
+                                    <span className="first-word text-[10px] opacity-50">ABOUT</span> &nbsp;
+                                    Enthusiastic Full Stack Developer eager to build innovative
+                                    full-stack web applications and grow through real-world projects,
+                                    <span className="text-white">STAR SHOT, PAYSTACK, HEVA HEALTH, DISNEY, JELLY,</span> and
+                                    <span className="text-white"> NULL</span> amongst others to achieve this.
                                 </p>
-                                <div className="hero__scroll flex items-center gap-3">
-                                    <div className="w-5 h-8 border-2 border-white/20 rounded-full relative overflow-hidden">
-                                        <svg
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            className="absolute top-2 left-1/2 -translate-x-1/2 w-5 h-5 text-primary animate-scroll-dash"
-                                        >
-                                            <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
-                                    </div>
-                                    <p className="text-[9px] uppercase tracking-[0.3em] font-medium opacity-40">Scroll</p>
-                                </div>
                             </div>
                         </div>
                     </span>
