@@ -12,14 +12,17 @@
   padding: 2.4rem 0;
   visibility: hidden;
 
-  .desktop {
-    @include media("<=phone") {
+  padding: 2.4rem 0;
+  visibility: hidden;
+
+  .mobile-only {
+    @include media(">tablet") {
       display: none !important;
     }
   }
 
-  .mobile {
-    @include media(">phone") {
+  .desktop-only {
+    @include media("<=tablet") {
       display: none !important;
     }
   }
@@ -32,17 +35,7 @@
     @extend %description-12;
     line-height: 1.4;
 
-    .hide-mobile {
-      @include media("<=phone") {
-        display: none;
-      }
-    }
-
-    .hide-desktop {
-      @include media(">phone") {
-        display: none;
-      }
-    }
+    // Visibility classes inherited from parent .home
 
     .nav__button {
       flex-shrink: 0;
@@ -118,11 +111,7 @@
         line-height: 0.9;
         color: $col-boulder;
 
-        .mobile {
-          @include media(">phone") {
-            display: none !important;
-          }
-
+        .mobile-only {
           h1 {
             @extend %title-328;
             letter-spacing: -0.05em;
@@ -136,12 +125,6 @@
             color: $col-gray;
             opacity: 0.6;
             margin-bottom: 2rem;
-          }
-        }
-
-        .desktop {
-          @include media("<=phone") {
-            display: none !important;
           }
         }
 

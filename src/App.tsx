@@ -31,13 +31,13 @@ function App() {
                         <span>Pradeep Molleti</span>
                     </div>
 
-                    <div className="nav__folio hide-mobile uppercase" nav-anim="">
+                    <div className="nav__folio desktop-only uppercase" nav-anim="">
                         <span>MERN stack Developer</span>
                     </div>
                 </div>
 
                 <div className="home__nav__right">
-                    <div className="nav__folio hide-desktop uppercase" nav-anim="">
+                    <div className="nav__folio mobile-only uppercase" nav-anim="">
                         MERN stack Developer
                     </div>
 
@@ -51,7 +51,7 @@ function App() {
 
             <section className="home__hero">
                 <div className="hero__title">
-                    <div className="mobile">
+                    <div className="mobile-only">
                         <h1 className="uppercase">
                             MERN <br />
                             —STACK <br />
@@ -70,7 +70,7 @@ function App() {
                         </p>
                     </div>
 
-                    <div className="hero__title__top overflow desktop">
+                    <div className="hero__title__top overflow desktop-only">
                         <div className="hero__title__top" title-overflow="">
                             <span className="hero__title__left" data-scroll="" data-scroll-direction="horizontal" data-scroll-position="top"
                                 data-scroll-speed="7">
@@ -93,7 +93,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="hero__title__bottom overflow desktop">
+                    <div className="hero__title__bottom overflow desktop-only">
                         <div className="hero__title__bottom">
                             <h1 className="bottom__left" title-overflow="">
                                 <span className="hero__hover">D</span>
