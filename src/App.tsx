@@ -32,13 +32,13 @@ function App() {
                     </div>
 
                     <div className="nav__folio desktop-only uppercase" nav-anim="">
-                        <span>MERN stack Developer</span>
+                        <span>FULL stack Developer</span>
                     </div>
                 </div>
 
                 <div className="home__nav__right">
                     <div className="nav__folio mobile-only uppercase" nav-anim="">
-                        MERN stack Developer
+                        FULL stack Developer
                     </div>
 
                     <div className="nav__availability" nav-anim=""></div>
@@ -53,12 +53,12 @@ function App() {
                 <div className="hero__title">
                     <div className="mobile-only">
                         <h1 className="uppercase">
-                            MERN <br />
+                            FULL <br />
                             —STACK <br />
                             DEVELOPER <br />
                         </h1>
                         <div className="flex justify-between w-full mt-4 opacity-40 text-[10px] tracking-[0.2em] font-medium uppercase">
-                            <span>MERN</span>
+                            <span>FULL</span>
                             <span>STACK</span>
                         </div>
                         <p className="hero__paragraph mt-10">
@@ -74,10 +74,10 @@ function App() {
                         <div className="hero__title__top" title-overflow="">
                             <span className="hero__title__left" data-scroll="" data-scroll-direction="horizontal" data-scroll-position="top"
                                 data-scroll-speed="7">
-                                <span className="hero__hover">M</span>
-                                <span className="hero__hover">E</span>
-                                <span className="hero__hover">R</span>
-                                <span className="hero__hover">N</span>
+                                <span className="hero__hover">F</span>
+                                <span className="hero__hover">U</span>
+                                <span className="hero__hover">L</span>
+                                <span className="hero__hover">L</span>
                             </span>
 
                             <span className="hero__title__dash desktop">—</span>
