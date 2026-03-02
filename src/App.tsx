@@ -65,8 +65,8 @@ function App() {
                             <span className="first-word text-[10px] opacity-50">ABOUT</span> &nbsp;
                             Enthusiastic Full Stack Developer eager to build innovative
                             full-stack web applications and grow through real-world projects,
-                            <span className="text-white">STAR SHOT, GO2GETHER, SYNOX09, BRANDPOST AI</span> and
-                            <span className="text-white"> NULL</span> amongst others to achieve this.
+                            <span className="text-white">STARSHOT AI, GO2GETHER, SYNOX09, BRANDPOST AI</span>
+                            amongst others to achieve this.
                         </p>
                     </div>
 
@@ -111,8 +111,8 @@ function App() {
                                     <span className="first-word text-[10px] opacity-50">ABOUT</span> &nbsp;
                                     Enthusiastic Full Stack Developer eager to build innovative
                                     full-stack web applications and grow through real-world projects,
-                                    <span className="text-white">STAR SHOT, PAYSTACK, HEVA HEALTH, DISNEY, JELLY,</span> and
-                                    <span className="text-white"> NULL</span> amongst others to achieve this.
+                                    <span className="text-white">STARSHOT AI, GO2GETHER, SYNOX09, BRANDPOST AI,</span>
+                                    amongst others to achieve this.
                                 </p>
                             </div>
                         </div>
