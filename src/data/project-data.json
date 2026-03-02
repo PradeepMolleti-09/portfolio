@@ -22,9 +22,9 @@
   },
   {
     "id": 4,
-    "title": "GRP 256 — FOLIO FOR VISUAL DESIGNER",
-    "role": "3D Exploration / <br /> Creative Development",
-    "description": "GRP 256 is a 3D-driven digital portfolio designed for showcasing the works of visual designer Fayemi.",
-    "link": "https://fayemi.design/"
+    "title": "BrandPost AI — AI-Powered Smart Poster & Social Media Design Platform",
+    "role": "Next JS / <br /> Creative Development",
+    "description": "An AI-powered app that creates brand-consistent, fully customizable social media posters in seconds.",
+    "link": "https://brandforgeai09.vercel.app/"
   }
 ]
